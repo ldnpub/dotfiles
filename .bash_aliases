@@ -38,7 +38,7 @@ function dockershellshhere() {
     docker run --rm -it --entrypoint=/bin/sh -v `pwd`:/${dirname} -w /${dirname} "$@"
 }
 
-function() dotfile-update-to-git{
+function dotfile-update-to-git(){
 	cd $HOME
 	/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status | grep modifié | awk '{print $2}' > /tmp/git.status
 	while IFS= read -r line; do
@@ -46,6 +46,7 @@ function() dotfile-update-to-git{
 	done < /tmp/git.status
 	/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -m "update"
 	/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push
+	rm /tmp/git.status
 }
 
 ##### BASH
