@@ -5,6 +5,7 @@
 # config config --local status.showUntrackedFiles no
 # echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config-push='dotfile-update-to-git'
 
 #### Docker -> https://blog.ropnop.com/docker-for-pentesters/ && https://medium.com/@nima.saed/metasploit-framework-console-on-docker-with-workspace-fc39f0f2a078
 alias kali='docker run -it -v "${HOME}/kali:/root/" kalilinux/kali-linux-docker /bin/bash'
@@ -37,6 +38,16 @@ function dockershellshhere() {
     docker run --rm -it --entrypoint=/bin/sh -v `pwd`:/${dirname} -w /${dirname} "$@"
 }
 
+function() dotfile-update-to-git{
+	cd $HOME
+	/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status | grep modifié | awk '{print $2}' > /tmp/git.status
+	while IFS= read -r line; do
+    		/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME add $line
+	done < /tmp/git.status
+	/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -m "update"
+	/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push
+}
+
 ##### BASH
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -54,4 +65,4 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias src='source ${HOME}/.zshrc'
