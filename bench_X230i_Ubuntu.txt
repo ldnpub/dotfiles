@@ -1,0 +1,86 @@
+sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Prime numbers limit: 20000
+
+Initializing worker threads...
+
+Threads started!
+
+CPU speed:
+    events per second:   294.79
+
+General statistics:
+    total time:                          10.0010s
+    total number of events:              2949
+
+Latency (ms):
+         min:                                  3.37
+         avg:                                  3.39
+         max:                                  5.83
+         95th percentile:                      3.43
+         sum:                               9999.14
+
+Threads fairness:
+    events (avg/stddev):           2949.0000/0.00
+    execution time (avg/stddev):   9.9991/0.00
+
+WARNING: --max-time is deprecated, use --time instead
+sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
+
+WARNING: --max-time is deprecated, use --time instead
+sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
+
+####################################
+sysbench --test=fileio --file-total-size=50G --file-test-mode=rndrw --time=300 --max-requests=0 run
+WARNING: the --test option is deprecated. You can pass a script name or path on the command line without any options.
+sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Extra file open flags: 0
+128 files, 400MiB each
+50GiB total file size
+Block size 16KiB
+Number of IO requests: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Initializing worker threads...
+
+Threads started!
+
+
+File operations:
+    reads/s:                      318.20
+    writes/s:                     212.13
+    fsyncs/s:                     678.72
+
+Throughput:
+    read, MiB/s:                  4.97
+    written, MiB/s:               3.31
+
+General statistics:
+    total time:                          300.0005s
+    total number of events:              362718
+
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.82
+         max:                                282.09
+         95th percentile:                      1.79
+         sum:                             299012.40
+
+Threads fairness:
+    events (avg/stddev):           362718.0000/0.00
+    execution time (avg/stddev):   299.0124/0.00
+
