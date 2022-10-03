@@ -120,11 +120,16 @@ ${color #0ABFFF}${font Open Sans Light:size=10}IP LOCAL: $color $alignr${addr en
 ${goto 14}${color1}${font Open Sans Light:size=8}Up:${color1} ${color3}${upspeed enp0s25}${color1}${alignr}${goto 170}${color1}Down:${color1} ${color3}${downspeed enp0s25}${color}
 ${goto 14}${upspeedgraph enp0s25 35,120 000000 0ABFFF}${alignr}${goto 160}${downspeedgraph enp0s25 35,120 000000 0ABFFF}
 ${goto 14}${color1}Sent:${color1} ${color2}${totalup enp0s25}${color1}${alignr}${goto 170}${color1}Received:${color} ${color2}${totaldown enp0s25}${color1}
-${else}${if_existing /proc/net/route USB_ANDROID}
-${color #0ABFFF}${font Open Sans Light:size=10}IP LOCAL: $color $alignr${addr USB_ANDROID}
-${goto 14}${color1}${font Open Sans Light:size=8}Up:${color1} ${color3}${upspeed USB_ANDROID}${color1}${alignr}${goto 170}${color1}Down:${color1} ${color3}${downspeed USB_ANDROID}${color}
-${goto 14}${upspeedgraph USB_ANDROID 35,120 000000 0ABFFF}${alignr}${goto 160}${downspeedgraph USB_ANDROID 35,120 000000 0ABFFF}
-${goto 14}${color1}Sent:${color1} ${color2}${totalup USB_ANDROID}${color1}${alignr}${goto 170}${color1}Received:${color} ${color2}${totaldown USB_ANDROID}${color1}
+% ${else}${if_existing /proc/net/route USB_ANDROID}
+% ${color #0ABFFF}${font Open Sans Light:size=10}IP LOCAL: $color $alignr${addr USB_ANDROID}
+% ${goto 14}${color1}${font Open Sans Light:size=8}Up:${color1} ${color3}${upspeed USB_ANDROID}${color1}${alignr}${goto 170}${color1}Down:${color1} ${color3}${downspeed USB_ANDROID}${color}
+% ${goto 14}${upspeedgraph USB_ANDROID 35,120 000000 0ABFFF}${alignr}${goto 160}${downspeedgraph USB_ANDROID 35,120 000000 0ABFFF}
+% ${goto 14}${color1}Sent:${color1} ${color2}${totalup USB_ANDROID}${color1}${alignr}${goto 170}${color1}Received:${color} ${color2}${totaldown USB_ANDROID}${color1}
+${else}${if_existing /proc/net/route enp0s20u1}
+${color #0ABFFF}${font Open Sans Light:size=10}IP LOCAL: $color $alignr${addr enp0s20u1}
+${goto 14}${color1}${font Open Sans Light:size=8}Up:${color1} ${color3}${upspeed enp0s20u1}${color1}${alignr}${goto 170}${color1}Down:${color1} ${color3}${downspeed enp0s20u1}${color}
+${goto 14}${upspeedgraph enp0s20u1 35,120 000000 0ABFFF}${alignr}${goto 160}${downspeedgraph enp0s20u1 35,120 000000 0ABFFF}
+${goto 14}${color1}Sent:${color1} ${color2}${totalup enp0s20u1}${color1}${alignr}${goto 170}${color1}Received:${color} ${color2}${totaldown enp0s20u1}${color1}
 ${else}${if_existing /proc/net/route eth1}
 ${color #0ABFFF}${font Open Sans Light:size=10}IP LOCAL: $color $alignr${addr eth1}
 ${goto 14}${color1}${font Open Sans Light:size=8}Up:${color1} ${color3}${upspeed eth1}${color}${alignr}${goto 170}${color1}Down:${color1} ${color3}${downspeed eth1}${color1}
