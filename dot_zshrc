@@ -70,7 +70,7 @@ kitty + complete setup zsh | source /dev/stdin
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="yyyy/mm/dd"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -123,10 +123,23 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias ls="lsd"
+
+#### My Aliases
 alias ls="lsd"
 
+
+### Specifics
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
+
+######
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#Atuin
+eval "$(atuin init zsh)"
+
+### My apps
+neofetch
+

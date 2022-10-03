@@ -100,3 +100,6 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#atuin
+eval "$(atuin init bash)"
