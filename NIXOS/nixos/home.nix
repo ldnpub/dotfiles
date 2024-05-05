@@ -90,7 +90,7 @@
   #  /etc/profiles/per-user/rodolphe/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "spacevim";
   };
 
   # Let Home Manager install and manage itself.
